@@ -54,26 +54,9 @@ public struct RiseTransitSetTimesDetails2 {
 ///   - equCoords3: the equatorial coordinates of the body at Date + 1 Day.
 ///   - geoCoords: the location on Earth, with its altitude set to the standard one (see above)
 /// - Returns: the times of rise, transit and set, with an indication if it is actually valid or not.
-public struct RiseTransitSetTimes2 {
-    public func riseTransitSet2Moon(fromJulianDay startJD: JulianDay,
-                               toJulianDay endJD: JulianDay,
-                               geoCoords: GeographicCoordinates, height: Double = 0, stepInterval: Double = 0.007) -> [Type : RiseTransitSetTimesDetails2]
-    {
-        // Do NOT pass Right Ascension values in degrees, as requested by AA+. It will be transformed later.
-        // See CAARiseTransitSet::CalculateTransit, line 72.
-        let details = KPCAARiseTransitSet2_CalculateMoon(startJD.UTCtoTT().value,
-                                                         endJD.UTCtoTT().value,
-                                                         geoCoords.longitude.value,
-                                                         geoCoords.latitude.value,
-                                                         height,
-                                                         stepInterval)
-        var dict = [Type : RiseTransitSetTimesDetails2]()
-        for detail in details! {
-            dict[detail.type] = RiseTransitSetTimesDetails2(julianDay: JulianDay(detail.jd), bearing: detail.bearing, geometricAltitude: detail.geometricAltitude, bAboveHorizon: detail.bAboveHorizon)
-        }
-        return dict
-    }
-}
+//public struct RiseTransitSetTimes2 {
+
+//}
 
 /*
 /// Convenient class for storing the Rise, Transit and Set times of a celestial body.
