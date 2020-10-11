@@ -10,8 +10,8 @@
 		123533DE252F5EBF005C6942 /* AARiseTransitSet2.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 123533DD252F5EBF005C6942 /* AARiseTransitSet2.cpp */; };
 		123533E3252F5ED1005C6942 /* AARiseTransitSet2.h in Headers */ = {isa = PBXBuildFile; fileRef = 123533E2252F5ED1005C6942 /* AARiseTransitSet2.h */; };
 		123533F1252F60CF005C6942 /* KPCAARiseTransitSet2.mm in Sources */ = {isa = PBXBuildFile; fileRef = 123533EF252F60CF005C6942 /* KPCAARiseTransitSet2.mm */; };
-		123533F2252F60CF005C6942 /* KPCAARiseTransitSet2.h in Headers */ = {isa = PBXBuildFile; fileRef = 123533F0252F60CF005C6942 /* KPCAARiseTransitSet2.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		12FAAC3D2532F8C20068D20C /* RiseTransitSet2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12FAAC3C2532F8C20068D20C /* RiseTransitSet2.swift */; };
+		12FD04DC2533087900B56E5E /* KPCAARiseTransitSet2.h in Headers */ = {isa = PBXBuildFile; fileRef = 12FD04DB2533087900B56E5E /* KPCAARiseTransitSet2.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		6F5C3ED61E073BAA00F572F6 /* NumericType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FB755281E05B59D00EC7617 /* NumericType.swift */; };
 		6F5C3ED71E073BB200F572F6 /* Distances.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FB755271E05B59D00EC7617 /* Distances.swift */; };
 		6F5C3ED81E073BC600F572F6 /* RiseTransitSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F877AFE1E052B83006FC6E5 /* RiseTransitSet.swift */; };
@@ -604,8 +604,8 @@
 		123533DD252F5EBF005C6942 /* AARiseTransitSet2.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AARiseTransitSet2.cpp; sourceTree = "<group>"; };
 		123533E2252F5ED1005C6942 /* AARiseTransitSet2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AARiseTransitSet2.h; path = include/AARiseTransitSet2.h; sourceTree = "<group>"; };
 		123533EF252F60CF005C6942 /* KPCAARiseTransitSet2.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = KPCAARiseTransitSet2.mm; path = ObjCAA/KPCAARiseTransitSet2.mm; sourceTree = "<group>"; };
-		123533F0252F60CF005C6942 /* KPCAARiseTransitSet2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KPCAARiseTransitSet2.h; path = ObjCAA/KPCAARiseTransitSet2.h; sourceTree = "<group>"; };
 		12FAAC3C2532F8C20068D20C /* RiseTransitSet2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RiseTransitSet2.swift; sourceTree = "<group>"; };
+		12FD04DB2533087900B56E5E /* KPCAARiseTransitSet2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KPCAARiseTransitSet2.h; path = ObjCAA/include/KPCAARiseTransitSet2.h; sourceTree = "<group>"; };
 		6F2141161E0E1783005E1913 /* NutationTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NutationTests.swift; sourceTree = "<group>"; };
 		6F2141191E0E1A91005E1913 /* AstronomicalCoordinatesTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AstronomicalCoordinatesTests.swift; sourceTree = "<group>"; };
 		6F21411C1E0E4CD5005E1913 /* SunTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SunTests.swift; sourceTree = "<group>"; };
@@ -1238,7 +1238,7 @@
 				9F7A9DE31B4FC4D400033B77 /* KPCAARefraction.mm */,
 				9F7A9DE81B4FC5D900033B77 /* KPCAARiseTransitSet.h */,
 				9F7A9DE91B4FC5D900033B77 /* KPCAARiseTransitSet.mm */,
-				123533F0252F60CF005C6942 /* KPCAARiseTransitSet2.h */,
+				12FD04DB2533087900B56E5E /* KPCAARiseTransitSet2.h */,
 				123533EF252F60CF005C6942 /* KPCAARiseTransitSet2.mm */,
 				9F7A9DEE1B4FC7A800033B77 /* KPCAASaturn.h */,
 				9F7A9DEF1B4FC7A800033B77 /* KPCAASaturn.mm */,
@@ -1870,7 +1870,6 @@
 				9FC894772503D797004E9055 /* KPCAAEquinoxesAndSolstices.h in Headers */,
 				9FC894782503D797004E9055 /* AAJewishCalendar.h in Headers */,
 				9FC894792503D797004E9055 /* AAELPMPP02.h in Headers */,
-				123533F2252F60CF005C6942 /* KPCAARiseTransitSet2.h in Headers */,
 				9FC8947A2503D797004E9055 /* AAKepler.h in Headers */,
 				9FC8947B2503D797004E9055 /* AAVSOP87A_EAR.h in Headers */,
 				9FC8947C2503D797004E9055 /* AAVSOP87C_NEP.h in Headers */,
@@ -1886,6 +1885,7 @@
 				9FC894862503D797004E9055 /* AAVSOP87A_JUP.h in Headers */,
 				9FC894872503D797004E9055 /* KPCAANutation.h in Headers */,
 				9FC894882503D797004E9055 /* AAPrecession.h in Headers */,
+				12FD04DC2533087900B56E5E /* KPCAARiseTransitSet2.h in Headers */,
 				9FC894892503D797004E9055 /* AACoordinateTransformation.h in Headers */,
 				9FC8948A2503D797004E9055 /* KPCAAEquationOfTime.h in Headers */,
 				9FC8948B2503D797004E9055 /* KPCAAPhysicalMoon.h in Headers */,
