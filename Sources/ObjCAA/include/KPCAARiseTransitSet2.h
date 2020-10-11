@@ -11,8 +11,8 @@
 #ifdef __cplusplus
 extern "C" {
 #endif
-typedef NS_ENUM(NSInteger, Type) {
-    notDefined,
+typedef NS_ENUM(NSInteger, KPCAARiseTransitSetType) {
+    notDefined = 0,
     rise,
     set,
     southernTransit,
@@ -26,7 +26,7 @@ typedef NS_ENUM(NSInteger, Type) {
 };
 
 @interface KPCAARiseTransitSetDetails2: NSObject
-@property Type type;
+@property KPCAARiseTransitSetType type;
 @property double JD;
 @property double bearing;
 @property double geometricAltitude;
@@ -50,23 +50,23 @@ typedef NS_ENUM(NSInteger, Type) {
 }
 
 @end
-typedef enum Object: NSInteger {
-    sun,
-    moon,
-    mercur,
-    venu,
-    mar,
-    jupite,
-    satur,
-    uranu,
-    neptun,
-    pluto,
-    star
-} Object;
+typedef NS_ENUM(NSInteger, KPCAARiseTransitSetObject) {
+    rtsSun,
+    rtsMoon,
+    rtsMercury,
+    rtsVenus,
+    rtsMars,
+    rtsJupiter,
+    rtsSaturn,
+    rtsUranus,
+    rtsNeptune,
+    rtsPluto,
+    rtsStar
+};
 
 NSArray<KPCAARiseTransitSetDetails2 *> *KPCAARiseTransitSet2_Calculate(double StartJD,
                                                                        double EndJD,
-                                                                       Object object,
+                                                                       KPCAARiseTransitSetObject object,
                                                                        double Longitude,
                                                                        double Latitude,
                                                                        double h0,

@@ -11,7 +11,7 @@
 
 NSArray<KPCAARiseTransitSetDetails2 *> *KPCAARiseTransitSet2_Calculate(double StartJD,
                                         double EndJD,
-                                        Object object,
+                                        KPCAARiseTransitSetObject object,
                                         double Longitude,
                                         double Latitude,
                                         double h0,
@@ -25,7 +25,7 @@ NSArray<KPCAARiseTransitSetDetails2 *> *KPCAARiseTransitSet2_Calculate(double St
 
     for(auto&& caaDetails: detailsPlus) {
         KPCAARiseTransitSetDetails2* details = [[KPCAARiseTransitSetDetails2 alloc] init];
-        details.type = (Type) caaDetails.type;
+        details.type = (KPCAARiseTransitSetType) caaDetails.type;
         details.JD = caaDetails.JD;
         details.bearing = caaDetails.Bearing;
         details.geometricAltitude = caaDetails.GeometricAltitude;
@@ -48,7 +48,8 @@ NSArray<KPCAARiseTransitSetDetails2 *> *KPCAARiseTransitSet2_CalculateMoon(doubl
 
     for(auto&& caaDetails: detailsPlus) {
         KPCAARiseTransitSetDetails2* details = [[KPCAARiseTransitSetDetails2 alloc] init];
-        details.type = (Type) caaDetails.type;
+        int type = (int) caaDetails.type;
+        details.type = (KPCAARiseTransitSetType) type;
         details.JD = caaDetails.JD;
         details.bearing = caaDetails.Bearing;
         details.geometricAltitude = caaDetails.GeometricAltitude;
@@ -73,7 +74,7 @@ NSArray<KPCAARiseTransitSetDetails2 *> *KPCAARiseTransitSet2_CalculateStationary
 
     for(auto&& caaDetails: detailsPlus) {
         KPCAARiseTransitSetDetails2* details = [[KPCAARiseTransitSetDetails2 alloc] init];
-        details.type = (Type) caaDetails.type;
+        details.type = (KPCAARiseTransitSetType) caaDetails.type;
         details.JD = caaDetails.JD;
         details.bearing = caaDetails.Bearing;
         details.geometricAltitude = caaDetails.GeometricAltitude;

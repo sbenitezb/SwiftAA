@@ -59,3 +59,31 @@ let results2 = polaris.riseTransitSetTimes(
         latitude: Degree(.plus, 49, 9, 3),
         altitude: 210)
 )
+
+var calendar = Calendar(identifier: .gregorian)
+let timeZone = TimeZone(abbreviation: "UTC-4")
+calendar.timeZone = timeZone!
+
+let testJD = JulianDay(year: 2020, month: 10, day: 03, hour: 20, minute: 00, second: 00)
+let testJDend = JulianDay(year: 2020, month: 10, day: 05)
+let location = GeographicCoordinates(CLLocation(latitude: 40.635, longitude: -75.584))
+//let rts2 = Moon.riseTransitSet2(fromJulianDay: testJD, toJulianDay: testJDend, geoCoords: location)
+
+let rts2 = RiseTransitSetTimes2.calculate(fromJulianDay: testJD,
+                                           toJulianDay: testJDend,
+                                           planet: .rtsMoon,
+                                           geoCoords: location, apparentRiseSetAltitude: 0)
+
+let formatter = DateFormatter()
+formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
+formatter.timeZone = timeZone
+
+for time in rts2 {
+
+    print("\(time.type): \(formatter.string(from: time.julianDay.date))")
+    if time.type == .northernTransit || time.type == .southernTransit {
+        print("Transit is visible: \(time.bAboveHorizon!)")
+        print("Geometric Altitude: \(time.geometricAltitude!)")
+    }
+    print("---")
+}
