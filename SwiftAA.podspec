@@ -16,7 +16,7 @@ to become the most reliable source of astronomical computations.
   s.homepage     = "https://www.onekiloparsec.dev/swiftaa"
   s.license      = { :type => "MIT", :file => "LICENSE" }
 
-  s.author             = { "onekiloparsec (a.k.a. Cédric Foellmi)" => "cedric@onekiloparsec.dev" }
+  s.author             = { "onekiloparsec (a.k.a. Cédric Foellmi)" => "cedric@onekiloparsec.dev" }
   s.social_media_url   = "http://twitter.com/onekiloparsec"
 
   #  When using multiple platforms
@@ -31,6 +31,6 @@ to become the most reliable source of astronomical computations.
   s.swift_version = "5"
 
   s.source_files  = "Sources", "Sources/SwiftAA/*.swift"
-  s.dependency 'ObjCAA', '~> 2.3.0'
+  s.dependency 'ObjCAA', :git => 'https://github.com/vincentneo/SwiftAA', :branch => 'sl'
 
 end
