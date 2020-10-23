@@ -12,7 +12,6 @@ let package = Package(
         // Products define the executables and libraries produced by a package, and make them visible to other packages.
         .library(
             name: "AAplus",
-            type: .dynamic,
             targets: ["AAplus"]
         ),
         .library(
@@ -21,7 +20,6 @@ let package = Package(
         ),
         .library(
             name: "SwiftAA",
-            type: .dynamic,
             targets: ["SwiftAA"]
         )
     ],
