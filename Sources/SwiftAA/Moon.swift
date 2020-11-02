@@ -64,6 +64,26 @@ public struct SelenographicCoordinates {
 /// The Earth's Moon.
 public class Moon : Object, CelestialBody {
     
+    public static func riseTransitSet2(fromJulianDay startJD: JulianDay,
+                               toJulianDay endJD: JulianDay,
+                               geoCoords: GeographicCoordinates, height: Double = 0, stepInterval: Double = 0.007) -> [RiseTransitSetTimesDetails2]
+    {
+        let details = KPCAARiseTransitSet2_CalculateMoon(startJD.UTCtoTT().value,
+                                                         endJD.UTCtoTT().value,
+                                                         geoCoords.longitude.value,
+                                                         geoCoords.latitude.value,
+                                                         height,
+                                                         stepInterval)
+        
+        var detailsArr = [RiseTransitSetTimesDetails2]()
+        for detail in details! {
+            let converted = RiseTransitSetTimesDetails2(type: RiseTransitSetType(rawValue: detail.type.rawValue)!, julianDay: JulianDay(detail.jd).TTtoUTC(), bearing: detail.bearing, geometricAltitude: detail.geometricAltitude, bAboveHorizon: detail.bAboveHorizon)
+            detailsArr.append(converted)
+            
+        }
+        return detailsArr
+    }
+    
     /// Accessor to all values underlying the geocentric physical details. Will probably become private
     /// once all relevant accessors are implemented and covered.
     public fileprivate(set) lazy var geocentricPhysicalDetails: KPCAAPhysicalMoonDetails = {

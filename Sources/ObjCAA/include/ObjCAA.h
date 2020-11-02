@@ -74,3 +74,4 @@ FOUNDATION_EXPORT const unsigned char ObjCAAVersionString[];
 #import "KPCAASun.h"
 #import "KPCAAUranus.h"
 #import "KPCAAVenus.h"
+#import "KPCAARiseTransitSet2.h"
